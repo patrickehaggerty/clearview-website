@@ -1,0 +1,39 @@
+{
+ "@context": "https://schema.org",
+ "@type": "AccountingService",
+ "@id": "https://www.clearviewas.com/#organization",
+ "name": "ClearView Business and Accounting Solutions",
+ "alternateName": "ClearView Accounting Solutions",
+ "url": "https://www.clearviewas.com/",
+ "logo": "https://www.clearviewas.com/img/logo.png",
+ "image": "https://www.clearviewas.com/img/og-image.png",
+ "description": "ClearView connects bookkeeping, payroll, human resources, sales tax, and outsourced CFO services under one roof for businesses nationwide. Book a free call.",
+ "telephone": "+1-985-317-2840",
+ "email": "contact@clearviewas.com",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "5 Windward Court",
+  "addressLocality": "Mandeville",
+  "addressRegion": "LA",
+  "postalCode": "70471",
+  "addressCountry": "US"
+ },
+ "areaServed": {
+  "@type": "Country",
+  "name": "United States"
+ },
+ "sameAs": [
+  "https://www.linkedin.com/in/mark-winebrener-mba-7179a41a/"
+ ],
+ "knowsAbout": [
+  "Bookkeeping",
+  "Accounting",
+  "Fractional CFO",
+  "Payroll",
+  "Human Resources",
+  "Sales Tax",
+  "Accounts Receivable",
+  "Accounts Payable",
+  "QuickBooks Online"
+ ]
+}

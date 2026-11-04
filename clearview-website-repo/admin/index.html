@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ClearView Blog Editor</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml">
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@3.16.1/dist/decap-cms.js"></script>
+  <script>
+    if (window.CMS) {
+      CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap');
+      CMS.registerPreviewStyle('/admin/preview.css');
+    }
+  </script>
+</body>
+</html>

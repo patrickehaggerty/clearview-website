@@ -1,0 +1,13 @@
+# Old site addresses -> new pages (permanent)
+/overview                                     /solutions/                                   301
+/accountingtech                               /bookkeeping-accounting-technology/           301
+/virtual-cfo                                  /outsourced-cfo/                              301
+/hr-services                                  /human-resources/                             301
+/ourclients                                   /our-clients/                                 301
+/resources                                    /blog/                                        301
+/solutions/accounting-technology              /bookkeeping-accounting-technology/           301
+/solutions/virtual-cfo                        /outsourced-cfo/                              301
+/solutions/payroll                            /payroll/                                     301
+/solutions/hr-services                        /human-resources/                             301
+/solutions/sales-tax                          /sales-tax/                                   301
+/solutions/accounts-receivable-payable        /accounts-receivable-payable/                 301

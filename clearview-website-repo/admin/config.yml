@@ -1,0 +1,94 @@
+# ClearView blog editor (Decap CMS). Opens at https://www.clearviewas.com/admin/
+#
+# LOGIN: editors sign in with their GitHub account.
+# Repository: github.com/patrickehaggerty/clearview-website
+backend:
+  name: github
+  repo: patrickehaggerty/clearview-website
+  branch: main
+  commit_messages:
+    create: "New blog post: {{slug}}"
+    update: "Update blog post: {{slug}}"
+    delete: "Delete blog post: {{slug}}"
+    uploadMedia: "Upload image: {{path}}"
+    deleteMedia: "Delete image: {{path}}"
+
+# To use email + password logins (Netlify Identity) instead of GitHub,
+# replace the backend block above with:
+# backend:
+#   name: git-gateway
+#   branch: main
+# and add this line to admin/index.html, above the Decap script:
+#   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+# Optional review step: uncomment to save new posts as drafts that must be
+# moved to "Ready" and published from the Workflow tab.
+# publish_mode: editorial_workflow
+
+site_url: https://www.clearviewas.com
+display_url: https://www.clearviewas.com
+logo_url: /img/logo.png
+locale: en
+
+media_folder: site/img/blog
+public_folder: /img/blog
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    description: "Write and publish posts for the ClearView blog. Saved posts go live on the website in about a minute."
+    folder: content/blog
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}/"
+    summary: "{{title}}  ·  {{author}}"
+    sortable_fields: ["date", "title", "author"]
+    view_filters:
+      - { label: "Mark", field: author, pattern: "Mark Winebrener" }
+      - { label: "Bradley", field: author, pattern: "Bradley Bellanger" }
+      - { label: "Leo", field: author, pattern: "Leo Sayer" }
+      - { label: "Kristin", field: author, pattern: "Kristin Pennington" }
+      - { label: "Jessica", field: author, pattern: "Jessica Lormand" }
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: "The post headline. Also used for the web address, so set it before the first save."
+      - label: Publish date
+        name: date
+        widget: datetime
+        hint: "Newest posts appear first on the blog and home page."
+      - label: Author
+        name: author
+        widget: select
+        default: ClearView Team
+        options: ["Mark Winebrener", "Bradley Bellanger", "Leo Sayer", "Kristin Pennington", "Jessica Lormand", "ClearView Team"]
+      - label: Category
+        name: category
+        widget: select
+        options: ["Bookkeeping", "Accounting Technology", "Virtual CFO", "Payroll", "Human Resources", "Sales Tax", "Accounts Receivable & Payable", "Outsourcing", "Growth", "Taxes", "News"]
+      - label: Summary
+        name: excerpt
+        widget: text
+        hint: "One or two sentences. Shown in Google search results and when the post is shared. About 150 characters is ideal."
+      - label: Cover image (optional)
+        name: image
+        widget: image
+        required: false
+        hint: "A wide, landscape photo works best. Leave empty to use the ClearView pattern."
+      - label: Hide from website
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+        hint: "Turn on to keep a post saved but not shown on the website."
+      - label: Post
+        name: body
+        widget: markdown
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
+        editor_components: ["image"]
+        hint: "Use 'Heading 2' for section titles. Paste plain text for best results."

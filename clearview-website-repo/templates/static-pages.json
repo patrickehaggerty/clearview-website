@@ -1,0 +1,46 @@
+[
+ {
+  "path": "/",
+  "priority": "1.0"
+ },
+ {
+  "path": "/who-we-are/",
+  "priority": "0.7"
+ },
+ {
+  "path": "/solutions/",
+  "priority": "0.9"
+ },
+ {
+  "path": "/bookkeeping-accounting-technology/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/outsourced-cfo/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/payroll/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/human-resources/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/sales-tax/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/accounts-receivable-payable/",
+  "priority": "0.8"
+ },
+ {
+  "path": "/our-clients/",
+  "priority": "0.6"
+ },
+ {
+  "path": "/contact/",
+  "priority": "0.8"
+ }
+]

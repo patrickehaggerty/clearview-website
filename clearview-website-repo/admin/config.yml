@@ -1,3 +1,4 @@
+
 # ClearView blog editor (Decap CMS). Opens at https://www.clearviewas.com/admin/
 #
 # LOGIN: editors sign in with their GitHub account.
@@ -30,15 +31,15 @@ display_url: https://www.clearviewas.com
 logo_url: /img/logo.png
 locale: en
 
-media_folder: site/img/blog
+media_folder: clearview-website-repo/site/img/blog
 public_folder: /img/blog
 
 collections:
   - name: blog
     label: Blog posts
     label_singular: Blog post
-       media_folder: clearview-website-repo/site/img/blog
-    folder: content/blog
+    description: "Write and publish posts for the ClearView blog. Saved posts go live on the website in about a minute."
+    folder: clearview-website-repo/content/blog
     create: true
     delete: true
     extension: md
@@ -46,7 +47,7 @@ collections:
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}/"
     summary: "{{title}}  ·  {{author}}"
-           folder: clearview-website-repo/content/blog
+    sortable_fields: ["date", "title", "author"]
     view_filters:
       - { label: "Mark", field: author, pattern: "Mark Winebrener" }
       - { label: "Bradley", field: author, pattern: "Bradley Bellanger" }

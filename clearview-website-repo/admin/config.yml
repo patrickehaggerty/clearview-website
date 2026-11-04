@@ -37,7 +37,7 @@ collections:
   - name: blog
     label: Blog posts
     label_singular: Blog post
-    description: "Write and publish posts for the ClearView blog. Saved posts go live on the website in about a minute."
+       media_folder: clearview-website-repo/site/img/blog
     folder: content/blog
     create: true
     delete: true
@@ -46,7 +46,7 @@ collections:
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}/"
     summary: "{{title}}  ·  {{author}}"
-    sortable_fields: ["date", "title", "author"]
+           folder: clearview-website-repo/content/blog
     view_filters:
       - { label: "Mark", field: author, pattern: "Mark Winebrener" }
       - { label: "Bradley", field: author, pattern: "Bradley Bellanger" }

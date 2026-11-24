@@ -1,5 +1,5 @@
 ---
-title: Restaurant Accounting & Payroll Services in Louisiana | Clearview
+title: Restaurant Accounting & Payroll Services in Louisiana | ClearView
   Accounting Solutions
 date: 2026-11-25T09:12:00.000-06:00
 author: ClearView Team

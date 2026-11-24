@@ -7,3 +7,6 @@
 
 /admin/*
   X-Robots-Tag: noindex
+
+/blog/schedule.json
+  Cache-Control: no-cache, no-store, must-revalidate

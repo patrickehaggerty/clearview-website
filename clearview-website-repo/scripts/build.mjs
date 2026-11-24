@@ -165,7 +165,13 @@ if (process.argv.includes('--emit-blog')) {
 
 // ---------- build ----------
 const t0 = Date.now();
-const posts = loadPosts();
+const now = Date.now();
+const allPosts = loadPosts();
+// A post dated in the future stays off the site until its date and time arrive.
+// netlify/functions/publish-scheduled.mjs checks every 15 minutes and rebuilds the site when one is due.
+const isScheduled = (p) => (Date.parse(p.date) || 0) > now;
+const posts = allPosts.filter((p) => !isScheduled(p));
+const scheduled = allPosts.filter(isScheduled);
 const clientPosts = posts.map(({ file, draft, ...p }) => p);
 const blogJson = JSON.stringify(clientPosts).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
@@ -272,6 +278,11 @@ for (const f of walk(DIST)) {
   fs.writeFileSync(f, s);
 }
 
+// list of upcoming publish times (dates only, no titles) for the scheduled-publish check
+fs.writeFileSync(path.join(DIST, 'blog', 'schedule.json'), JSON.stringify({
+  scheduled: scheduled.map((p) => new Date(p.date).toISOString()).sort(),
+}));
+
 // sitemap
 const today = new Date().toISOString().slice(0, 10);
 const urls = [
@@ -282,4 +293,4 @@ const urls = [
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map(([u, d, p]) => `  <url><loc>${u}</loc><lastmod>${d}</lastmod><priority>${p}</priority></url>`).join('\n') + '\n</urlset>\n');
 
-console.log(`ClearView build: ${posts.length} blog posts, ${urls.length} sitemap URLs, ${Date.now() - t0} ms`);
+console.log(`ClearView build: ${posts.length} blog posts live, ${scheduled.length} scheduled${scheduled.length ? ' (' + scheduled.map((p) => p.file + ' @ ' + new Date(p.date).toISOString()).join(', ') + ')' : ''}, ${urls.length} sitemap URLs, ${Date.now() - t0} ms`);

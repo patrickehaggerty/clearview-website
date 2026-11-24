@@ -62,7 +62,7 @@ collections:
       - label: Publish date
         name: date
         widget: datetime
-        hint: "Newest posts appear first on the blog and home page."
+        hint: "To schedule a post, pick a future date and time, then click Publish. It stays hidden and goes live automatically at that time (within about 15 minutes). Newest posts appear first."
       - label: Author
         name: author
         widget: select

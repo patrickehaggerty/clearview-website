@@ -1,6 +1,6 @@
 ---
 title: Bookkeeper vs. Controller vs. CFO | Small Business Guide
-date: 2026-11-27T10:37:00.000-06:00
+date: 2026-11-30T10:37:00.000-06:00
 author: ClearView Team
 category: Virtual CFO
 excerpt: >
